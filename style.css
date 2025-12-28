@@ -86,3 +86,51 @@ strong {
         font-size: 16px;
     }
 }
+.container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 50px;
+}
+
+/* Sidebar */
+.sidebar {
+    font-size: 14px;
+}
+
+.sidebar h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #1f3c88;
+}
+
+.stack-group {
+    margin-bottom: 18px;
+}
+
+.stack-group strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.stack-group span {
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Conteúdo principal */
+.content {
+    width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+    }
+}
