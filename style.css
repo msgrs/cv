@@ -111,7 +111,13 @@ strong {
 /* Coluna Técnica Elegante */
 .tech-column {
     position: relative;
-    padding-right: 30px;
+    padding: 25px 30px 25px 25px;
+    background: linear-gradient(
+        180deg,
+        rgba(31, 60, 136, 0.04),
+        rgba(31, 60, 136, 0.01)
+    );
+    border-radius: 10px;
 }
 
 .tech-column::before {
