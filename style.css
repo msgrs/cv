@@ -128,22 +128,6 @@ strong {
         0 8px 18px rgba(0, 0, 0, 0.04);
 }
 
-.tech-column::before {
-    content: "";
-    position: absolute;
-    top: -50px;
-    left: -60px;
-    width: 220px;
-    height: calc(100% + 100px);
-    background: linear-gradient(
-        180deg,
-        rgba(31, 60, 136, 0.08),
-        rgba(63, 114, 175, 0.03)
-    );
-    border-radius: 8px;
-    z-index: -1;
-}
-
 /* Título da coluna */
 .tech-column h3 {
     font-size: 16px;
