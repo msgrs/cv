@@ -111,13 +111,21 @@ strong {
 /* Coluna Técnica Elegante */
 .tech-column {
     position: relative;
-    padding: 25px 30px 25px 25px;
+    padding: 30px 30px 30px 28px;
+
+    /* fundo técnico visível, mas elegante */
     background: linear-gradient(
         180deg,
-        rgba(31, 60, 136, 0.04),
-        rgba(31, 60, 136, 0.01)
+        rgba(31, 60, 136, 0.08),
+        rgba(31, 60, 136, 0.02)
     );
+
+    /* detalhe premium */
+    border-left: 3px solid rgba(31, 60, 136, 0.35);
     border-radius: 10px;
+
+    box-shadow: 
+        0 8px 18px rgba(0, 0, 0, 0.04);
 }
 
 .tech-column::before {
