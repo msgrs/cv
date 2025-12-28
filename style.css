@@ -43,10 +43,10 @@ h1 {
 
 h2 {
     font-size: 22px;
-    margin-top: 45px;
+    margin-top: 50px;
     margin-bottom: 18px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #e0e0e0;
+    padding-left: 14px;
+    border-left: 4px solid #1f3c88;
     font-weight: 500;
     color: #1f3c88;
 }
