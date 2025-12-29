@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcelo Goulart - Currículo</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="curriculo">
         <!-- HEADER -->
         <div class="header">
-            <div class="menu-toggle">
+            <div class="menu-toggle" onclick="baixarPDF()" title="Baixar PDF">
                 <span></span>
             </div>
             
@@ -134,5 +135,42 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function baixarPDF() {
+            const botao = document.querySelector('.menu-toggle');
+            const textoOriginal = botao.innerHTML;
+            
+            // Feedback visual
+            botao.innerHTML = '⏳';
+            botao.style.pointerEvents = 'none';
+            
+            const elemento = document.getElementById('curriculo');
+            
+            const opcoes = {
+                margin: 10,
+                filename: 'Curriculo_Marcelo_Goulart.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    letterRendering: true
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait' 
+                }
+            };
+            
+            html2pdf().set(opcoes).from(elemento).save().then(() => {
+                botao.innerHTML = '✓';
+                setTimeout(() => {
+                    botao.innerHTML = textoOriginal;
+                    botao.style.pointerEvents = 'auto';
+                }, 2000);
+            });
+        }
+    </script>
 </body>
 </html>
