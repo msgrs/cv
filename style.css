@@ -88,8 +88,8 @@ strong {
 }
 .container {
     display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 50px;
+    grid-template-columns: 240px 1fr;
+    gap: 60px;
 }
 
 /* Conteúdo principal */
