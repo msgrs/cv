@@ -8,24 +8,16 @@ body {
 }
 
 .container {
-    max-width: 960px;
+    max-width: 1100px;
     margin: 60px auto;
     background: #ffffff;
-    padding: 50px 60px;
-    border-radius: 10px;
+    padding: 0 60px 50px;
+    border-radius: 14px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    position: relative;
-}
 
-.container::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 6px;
-    height: 100%;
-    background: linear-gradient(180deg, #1f3c88, #3f72af);
-    border-radius: 10px 0 0 10px;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 60px;
 }
 
 h1 {
@@ -149,17 +141,6 @@ strong {
     line-height: 1.5;
 }
 
-/* Ajuste grid */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 30px 40px;
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 60px;
-}
-
-
 /* Mobile */
 @media (max-width: 900px) {
     .container {
@@ -170,16 +151,23 @@ strong {
         display: none;
     }
 }
+
 .hero {
+    grid-column: 1 / -1; /* ocupa a folha toda */
     position: relative;
+    margin-bottom: 50px;
     padding: 60px 40px 80px;
+
     background: linear-gradient(
         135deg,
         #0f3d2e,
         #145c46
     );
+
     color: #e8fff6;
+    border-radius: 14px;
     overflow: hidden;
+    text-align: center;
 }
 
 .hero::before {
