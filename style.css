@@ -171,3 +171,68 @@ strong {
         display: none;
     }
 }
+.hero {
+    position: relative;
+    padding: 60px 40px 80px;
+    background: linear-gradient(
+        135deg,
+        #0f3d2e,
+        #145c46
+    );
+    color: #e8fff6;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.03),
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px,
+            transparent 22px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.02),
+            rgba(255, 255, 255, 0.02) 1px,
+            transparent 1px,
+            transparent 18px
+        );
+    opacity: 0.35;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: white;
+    border-top-left-radius: 100% 100%;
+    border-top-right-radius: 100% 100%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.hero h2 {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #b9f5dc;
+    text-transform: uppercase;
+}
