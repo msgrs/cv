@@ -17,7 +17,7 @@
     <div class="container" id="curriculo">
         <!-- HEADER -->
         <div class="header">
-            <div class="menu-toggle" onclick="baixarPDF()" title="Baixar PDF">
+            <div class="menu-toggle" onclick="abrirPreview()" title="Visualizar e Baixar PDF">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 6 2 18 2 18 9"></polyline>
                     <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
@@ -28,7 +28,6 @@
             <div class="header-content">
                 <div class="profile-pic">MG</div>
                 <div class="header-text">
-                    <!--Olá, eu sou<br>-->
                     <h1>Marcelo Goulart</h1>
                     <h2>Analista de TI Sênior | Infraestrutura, Redes, Virtualização e Suporte</h2>
                     <div class="contact-info">
@@ -161,47 +160,31 @@
         </div>
     </div>
 
-    <script>
-        function baixarPDF() {
-            const botao = document.querySelector('.menu-toggle');
-            const textoOriginal = botao.innerHTML;
-            
-            // Feedback visual
-            botao.innerHTML = '⏳';
-            botao.style.pointerEvents = 'none';
-            
-            const elemento = document.getElementById('curriculo');
-            
-            const opcoes = {
-                margin: [8, 8, 8, 8],
-                filename: 'Curriculo_Marcelo_Goulart.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { 
-                    scale: 2,
-                    useCORS: true,
-                    letterRendering: true,
-                    windowHeight: elemento.scrollHeight
-                },
-                jsPDF: { 
-                    unit: 'mm', 
-                    format: 'a4', 
-                    orientation: 'portrait',
-                    compress: true
-                },
-                pagebreak: { 
-                    mode: ['avoid-all', 'css', 'legacy'],
-                    avoid: ['.section', '.skill-item']
-                }
-            };
-            
-            html2pdf().set(opcoes).from(elemento).save().then(() => {
-                botao.innerHTML = '✓';
-                setTimeout(() => {
-                    botao.innerHTML = textoOriginal;
-                    botao.style.pointerEvents = 'auto';
-                }, 2000);
-            });
-        }
-    </script>
+    <!-- MODAL DE PREVIEW -->
+    <div class="modal-overlay" id="modalPreview">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>📄 Visualizar PDF</h3>
+                <div class="modal-actions">
+                    <button class="btn btn-primary" onclick="confirmarDownload()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Baixar PDF
+                    </button>
+                    <button class="btn btn-secondary" onclick="fecharPreview()">Cancelar</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="preview-container">
+                    <div class="preview-page" id="previewContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
