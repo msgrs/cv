@@ -87,15 +87,6 @@ strong {
     }
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 30px 40px;
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 60px;
-}
-
 /* Conteúdo principal */
 .content {
     width: 100%;
