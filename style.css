@@ -160,10 +160,14 @@ strong {
 
 /* Ajuste grid */
 .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px 40px;
     display: grid;
     grid-template-columns: 240px 1fr;
     gap: 60px;
 }
+
 
 /* Mobile */
 @media (max-width: 900px) {
