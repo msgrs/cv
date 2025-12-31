@@ -462,3 +462,9 @@ body {
         height: 2px;
     }
 }
+
+/* ===== Correção de justificação no mobile ===== */
+p, li, .content, .section, .cv-container {
+    text-align: justify;
+    text-justify: inter-word;
+}
