@@ -6,11 +6,11 @@ function abrirPreview() {
     // Clona o conteúdo do currículo para o preview
     previewContent.innerHTML = curriculo.innerHTML;
     
-    // Remove o botão de download do preview
+    // Remove os botões de download e carta do preview
     const menuToggle = previewContent.querySelector('.menu-toggle');
-    if (menuToggle) {
-        menuToggle.remove();
-    }
+    const cartaToggle = previewContent.querySelector('.carta-toggle');
+    if (menuToggle) menuToggle.remove();
+    if (cartaToggle) cartaToggle.remove();
     
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -20,6 +20,15 @@ function fecharPreview() {
     const modal = document.getElementById('modalPreview');
     modal.classList.remove('active');
     document.body.style.overflow = 'auto';
+}
+
+// FUNÇÃO PARA ABRIR CARTA DE APRESENTAÇÃO
+function abrirCarta() {
+    // Abre a carta em uma nova aba
+    window.open('carta.html', '_blank');
+    
+    // Alternativa: abrir na mesma aba
+    // window.location.href = 'carta.html';
 }
 
 function confirmarDownload() {
