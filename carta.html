@@ -181,7 +181,7 @@
                 <div>📧 <a href="mailto:msgoulartrs@gmail.com">msgoulartrs@gmail.com</a></div>
                 <div>📍 Porto Alegre, RS</div>
                 <div>🔗 <a href="https://cv.centersul.net.br" target="_blank">cv.centersul.net.br</a></div>
-                <div>💼 <a href="https://linkedin.com/in/seu-perfil" target="_blank">LinkedIn</a></div>
+                <div>💼 <a href="https://linkedin.com/in/marcelo-goulart-12558b388" target="_blank">LinkedIn</a></div>
                 <div>🐙 <a href="https://github.com/msgrs" target="_blank">GitHub</a></div>
             </div>
             
@@ -213,99 +213,4 @@
                 <li>Desenvolvimento de sistemas internos em PHP e Delphi</li>
                 <li>Integração de bancos de dados SQL Server, PostgreSQL e MySQL</li>
                 <li>Implantação de soluções de monitoramento com Nagios, Zabbix e Grafana</li>
-                <li>Gestão de ambientes Docker e virtualização</li>
-                <li>Desenvolvimento de soluções CNAB FEBRABAN</li>
-                <li>Suporte técnico multinível (1, 2 e 3)</li>
-            </ul>
-            
-            <p>
-                Sou formado em <span class="destaque">Análise e Desenvolvimento de Sistemas</span> e possuo inglês intermediário, o que me permite acompanhar as melhores práticas e tendências do setor. Sou reconhecido por minha capacidade de resolver problemas complexos, documentação técnica detalhada e padronização de ambientes.
-            </p>
-            
-            <p>
-                Tenho grande interesse em contribuir para projetos desafiadores e estou disponível para uma entrevista para discutir como posso agregar valor à sua organização. Meu currículo completo está disponível em <a href="https://cv.centersul.net.br" style="color: #4a90a4;">cv.centersul.net.br</a>.
-            </p>
-            
-            <div class="assinatura">
-                <p>Atenciosamente,</p>
-                <p><strong>Marcelo Goulart</strong></p>
-                <p>Analista de TI Sênior</p>
-                <p>📞 (51) 99999-9999 | ✉️ msgoulartrs@gmail.com</p>
-            </div>
-        </div>
-        
-        <!-- Ações -->
-        <div class="acoes">
-            <button class="btn-carta btn-imprimir" onclick="imprimirCarta()">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M6 9H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"></path>
-                    <rect x="6" y="13" width="12" height="8"></rect>
-                </svg>
-                Imprimir / Salvar PDF
-            </button>
-            
-            <a href="index.html" class="btn-carta btn-voltar">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M19 12H5M12 19l-7-7 7-7"></path>
-                </svg>
-                Voltar ao Currículo
-            </a>
-        </div>
-    </div>
-
-    <script>
-        // Data atual
-        const data = new Date();
-        const options = { day: 'numeric', month: 'long', year: 'numeric' };
-        document.getElementById('dataAtual').textContent = data.toLocaleDateString('pt-BR', options);
-        
-        // Função para imprimir/salvar como PDF
-        function imprimirCarta() {
-            const elemento = document.getElementById('cartaConteudo');
-            const botao = event.target.closest('.btn-imprimir');
-            const textoOriginal = botao.innerHTML;
-            
-            // Feedback visual
-            botao.innerHTML = '⏳ Gerando PDF...';
-            botao.style.pointerEvents = 'none';
-            
-            const opcoes = {
-                margin: [15, 15, 15, 15],
-                filename: 'Carta_Apresentacao_Marcelo_Goulart.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { 
-                    scale: 2,
-                    useCORS: true,
-                    letterRendering: true
-                },
-                jsPDF: { 
-                    unit: 'mm', 
-                    format: 'a4', 
-                    orientation: 'portrait'
-                }
-            };
-            
-            html2pdf().set(opcoes).from(elemento).save().then(() => {
-                botao.innerHTML = '✓ PDF Baixado!';
-                setTimeout(() => {
-                    botao.innerHTML = textoOriginal;
-                    botao.style.pointerEvents = 'auto';
-                }, 2000);
-            }).catch(err => {
-                console.error('Erro ao gerar PDF:', err);
-                botao.innerHTML = textoOriginal;
-                botao.style.pointerEvents = 'auto';
-                alert('Erro ao gerar PDF. Tente novamente.');
-            });
-        }
-        
-        // Também permitir impressão nativa com Ctrl+P
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && e.key === 'p') {
-                e.preventDefault();
-                imprimirCarta();
-            }
-        });
-    </script>
-</body>
-</html>
+                <li>Gestão de ambientes Docker
